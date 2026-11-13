@@ -1,0 +1,21 @@
+{
+  "name": "fridgechef-fullstack",
+  "version": "1.0.0",
+  "description": "AI-powered recipe generator based on ingredients in your fridge using Google Gemini",
+  "author": "Harsh Kumar Singhal <harshksinghal2004@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm install && cd client && npm install && npm run build",
+    "postinstall": "cd client && npm install && npm run build",
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
