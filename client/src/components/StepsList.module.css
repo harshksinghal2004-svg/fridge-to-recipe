@@ -1,0 +1,173 @@
+.section { margin-bottom: 24px; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Progress bar */
+.progressBar {
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--grad-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Completion banner */
+.completionBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 16px;
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Step list */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.4s ease both;
+  cursor: default;
+}
+.step:hover { border-color: rgba(255,255,255,0.12); }
+.done {
+  background: rgba(52,211,153,0.04) !important;
+  border-color: rgba(52,211,153,0.15) !important;
+  opacity: 0.75;
+}
+
+/* Checkbox button */
+.checkbox {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--bg-elevated);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+  font-family: var(--font-sans);
+}
+.checkbox:hover {
+  border-color: var(--accent-primary);
+  background: rgba(108,99,255,0.1);
+}
+.done .checkbox {
+  background: var(--grad-primary);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(108,99,255,0.4);
+}
+.done .checkbox svg {
+  width: 16px;
+  height: 16px;
+  animation: checkmark 0.3s ease;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+
+.stepNum {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Step content */
+.stepContent { flex: 1; min-width: 0; }
+
+.instruction {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  transition: color var(--transition-base);
+}
+.done .instruction {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255,255,255,0.2);
+}
+
+.meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.metaChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 3px 8px;
+}
+
+.tipChip {
+  color: var(--accent-amber);
+  background: rgba(251, 191, 36, 0.06);
+  border-color: rgba(251, 191, 36, 0.15);
+}
+
+@media (max-width: 480px) {
+  .step { padding: 12px; gap: 10px; }
+  .checkbox { width: 30px; height: 30px; }
+}

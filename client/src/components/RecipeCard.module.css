@@ -1,0 +1,117 @@
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Header */
+.header { margin-bottom: 24px; }
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  flex: 1;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.metaChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.tagChip {
+  color: var(--accent-primary);
+  background: rgba(108,99,255,0.06);
+  border-color: rgba(108,99,255,0.15);
+}
+
+/* Nutrition */
+.nutrition {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.nutriItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.nutriValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nutriLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Scaler section */
+.scalerWrap {
+  margin-bottom: 20px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .card { padding: 20px 16px; }
+  .titleRow { flex-direction: column; gap: 8px; }
+  .nutrition { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 360px) {
+  .nutrition { grid-template-columns: repeat(2, 1fr); }
+}
